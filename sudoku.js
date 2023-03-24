@@ -140,6 +140,12 @@ function valid(numb,poz, board){
 
     }
   }
+  return true
+}
+function recur(board){
+const funvoid = voidd(board)
+if (funvoid === 'null')
+
 }
 
 
