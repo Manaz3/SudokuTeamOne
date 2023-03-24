@@ -1,29 +1,153 @@
-/**
- * Принимает игровое поле в формате строки — как в файле sudoku-puzzles.txt.
- * Возвращает игровое поле после попытки его решить.
- * Договорись со своей командой, в каком формате возвращать этот результат.
- */
-function solve(boardString) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function sudoku(createSudoku){
+const str = 9
+const box = 3 
+function voidd(board){
+  for(let i = 0;i<str;i++){
+    for(let n=0;n<str;i++){
+      if (board[i][n]=='-')
+      return board[i][n]
+    }
+  }
+  return 'null'
+}
+function valid(numb,poz, board){
+  const [i,n] = poz;
+  for ( let s = 0 ; s < str; s++){
+    if (board[s][n]=== numb && s!==i)
+    return false
+  }
+  for ( let x = 0 ; x < str; x++){
+    if (board[x][i]=== numb && x!==n)
+    return false
+  }
+
+  const boxstr = Math.floor(i/box)*box
+  const boxcolum = Math.floor(n/box)*box
+
+  for (z = boxstr; z<boxstr+box; z++){
+    for (q = boxcolum; q<boxcolum+box; q++){
+      if (board[z][q]===numb && z!==i && n!==q)
+      return false
+
+    }
+  }
 }
 
-/**
- * Принимает игровое поле в том формате, в котором его вернули из функции solve.
- * Возвращает булевое значение — решено это игровое поле или нет.
- */
-function isSolved(board) {
+
 
 }
 
-/**
- * Принимает игровое поле в том формате, в котором его вернули из функции solve.
- * Возвращает строку с игровым полем для последующего вывода в консоль.
- * Подумай, как симпатичнее сформировать эту строку.
- */
-function prettyBoard(board) {
 
-}
 
-// Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
   solve,
   isSolved,
