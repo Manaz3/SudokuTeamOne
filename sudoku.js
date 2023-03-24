@@ -142,10 +142,14 @@ function valid(numb,poz, board){
   }
   return true
 }
-function recur(board){
+function recur(){
 const funvoid = voidd(board)
 if (funvoid === 'null')
-
+return true
+}
+for (let i = 0; i< str){
+  const curnum = i.toString()
+  const validd = valid(num, poz, board)
 }
 
 
