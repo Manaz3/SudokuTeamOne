@@ -3,7 +3,30 @@
  * Возвращает игровое поле после попытки его решить.
  * Договорись со своей командой, в каком формате возвращать этот результат.
  */
+const fs = require('fs');
+const path = require('path');
+const { argv } = require('process');
+
+function chooseSudoku(number) {
+  const lineBoard = fs.readFileSync(path.join(__dirname, 'puzzles.txt'), 'utf-8');
+  const sudokuPuzzle = lineBoard.split('\n')
+  const linedSudoku = sudokuPuzzle[number-1];
+  console.log(linedSudoku)
+  const boxSize = 3;
+  const puzzleSize = 9;
+  const puzzle = [];
+  for (let i = 0; i < puzzleSize; i++) {
+    let count = i * 9;
+    let sudokuLine = linedSudoku.slice(count, count + 9).split('');
+    puzzle.push(sudokuLine)
+  }
+
+  return puzzle;
+}
+
+
 function solve(boardString) {
+
 }
 
 /**
